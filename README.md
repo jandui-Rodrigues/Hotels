@@ -61,17 +61,46 @@ O sistema está dividido em diretórios específicos para auxiliar na organizaç
 
     ![banco de dados](img/der.png)
 
-  O diagrama infere 03 tabelas:
-  - ***Cities***: tabela que armazenará um conjunto de cidades nas quais os hotéis estão localizados.
-  - ***Hotels***: tabela que armazenará os hotéis da nossa aplicação. Note que informamos o `CityId`, atributo que armazenará o id da cidade.
-  - ***Rooms***: tabela que armazenará os quartos de cada hotel da nossa aplicação. Note que informamos o `HotelId`, atributo que armazenará o id do hotel.
+  O diagrama infere 05 tabelas:
+  - ***Cities***: tabela que armazenará um conjunto de cidades nas quais os hotéis estão localizados (já desenvolvida).
+  - ***Hotels***: tabela que armazenará os hotéis da nossa aplicação. Note que informamos o `CityId`, atributo que armazenará o id da cidade (já desenvolvida).
+  - ***Rooms***: tabela que armazenará os quartos de cada hotel da nossa aplicação. Note que informamos o `HotelId`, atributo que armazenará o id do hotel (já desenvolvida).
+  - ***Users***: tabela que armazenará as pessoas usuárias do sistema.
+  - ***Bookings***: tabela que armazenará as reservas de quartos de hotéis. Note que informamos os atributos `UserId`, que armazenará o id da pessoa usuária e `RoomId`, que armazenará o id do quarto reservado.
 
   Acerca dos relacionamentos, pelo diagrama de entidade-relacionamento temos:
   - Uma cidade pode ter vários hotéis.
   - Um hotel pode ter vários quartos.
+  - Uma pessoa usuária pode ter várias reservas.
+  - Um quarto pode ter várias reservas.
 
   ⚠️ **Você poderá criar migrations para visualizar o banco de dados**
 
 </details>
 
+<details>
+<summary><strong>🐳 Docker</strong></summary><br />
 
+Para auxiliar no desenvolvimento, este projeto possui um arquivo do docker compose para subir um serviço do banco de dados `Azure Data Studio`. Este banco de dados possui a mesma arquitetura do `SQL Server`.
+
+Para subir o serviço, utilize o comando:
+
+```shell
+docker-compose up -d --build
+```
+
+Para conectar ao seu sistema de gerenciamento de banco de dados, utilize as seguintes credenciais:
+
+- `Server`: localhost
+- `User`: sa
+- `Password`: TrybeHotel12!
+- `Database`: TrybeHotel
+- `Trust server certificate`: true
+
+Para criar o contexto do banco de dados na sua aplicação, utilize como connection string:
+
+```csharp
+var connectionString = "Server=localhost;Database=TrybeHotel;User=SA;Password=TrybeHotel12!;TrustServerCertificate=True";
+```
+
+</details>
