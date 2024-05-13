@@ -16,7 +16,7 @@ Este projeto é uma API responsável pelo controle de cidades, hotéis e quartos
 
   1. Clone o repositório
 
-  - Use o comando: `git clone git@github.com:tryber/csharp-001-projeto-trybe-hotel.git`.
+  - Use o comando: `git clone git@github.com:jandui-Rodrigues/Hotels.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd csharp-001-projeto-trybe-hotel`
 
